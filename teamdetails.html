@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Details</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #fff1bc;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #699c78;
+        font-size: 36px;
+        margin-bottom: 40px;
+      }
+
+      .team-members {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .team-member {
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 280px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 4px solid #7dc383;
+      }
+
+      .team-member h3 {
+        font-size: 24px;
+        color: #699c78;
+        margin: 10px 0;
+      }
+
+      .linkedin-btn {
+        display: inline-block;
+        background-color: #7dc383;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      .linkedin-btn:hover {
+        background-color: #699c78;
+      }
+
+      .linkedin-btn:active {
+        background-color: #004080;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px 15px;
+        background: #fff1bc;
+        color: #699c78;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      .back-link:hover {
+        background: #7dc383;
+        color: #fff;
+      }
+
+      .back-link:active {
+        background: #0041a8;
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meet the Team</h1>
+      <div class="team-members">
+        <div class="team-member">
+          <img
+            src="{{ url_for('static', filename='images/member1.jpg') }}"
+            alt="Member 1"
+            class="team-img"
+          />
+          <h3>Guna Vardhan Chintala</h3>
+          <a
+            href="https://www.linkedin.com/in/gunavardhanch/"
+            target="_blank"
+            class="linkedin-btn"
+            >View LinkedIn Profile</a
+          >
+        </div>
+        <div class="team-member">
+          <img
+            src="{{ url_for('static', filename='images/member2.jpg') }}"
+            alt="Member 2"
+            class="team-img"
+          />
+          <h3>Diswanth Dodda</h3>
+          <a
+            href="http://www.linkedin.com/in/diswanth-dodda-6b9ab1255"
+            target="_blank"
+            class="linkedin-btn"
+            >View LinkedIn Profile</a
+          >
+        </div>
+        <div class="team-member">
+          <img
+            src="{{ url_for('static', filename='images/member3.jpg') }}"
+            alt="Member 3"
+            class="team-img"
+          />
+          <h3>Pratap Chavatapalli</h3>
+          <a
+            href="https://www.linkedin.com/in/prathap-chavatapalli-52470223b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            class="linkedin-btn"
+            >View LinkedIn Profile</a
+          >
+        </div>
+        <div class="team-member">
+          <img
+            src="{{ url_for('static', filename='images/member4.jpg') }}"
+            alt="Pavan Naik Banavath"
+            class="team-img"
+          />
+          <h3>Pavan Naik Banavath</h3>
+          <a
+            href="https://www.linkedin.com/in/pavan-naik-rathod-2ba1b2255"
+            target="_blank"
+            class="linkedin-btn"
+            >View LinkedIn Profile</a
+          >
+        </div>
+        <a class="back-link" href="/">Back to Home</a>
+      </div>
+    </div>
+  </body>
+</html>
