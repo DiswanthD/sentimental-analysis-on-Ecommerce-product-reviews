@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sentiment Analysis Project</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #a6c0fe, #f68084);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Header Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2.5rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h2 {
+            color: #007bff;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .container ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1rem;
+            text-align: left;
+            color: #555;
+        }
+
+        .container li {
+            margin: 0.8rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4, #fbc2eb);
+            animation: gradientMove 5s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            from {
+                background-position: 0%;
+            }
+            to {
+                background-position: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us - Sentiment Analysis Project</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide an efficient and accessible way to analyze customer sentiment through the use of machine learning algorithms. By doing so, businesses can gain valuable insights into customer opinions and make data-driven decisions to improve their services.</p>
+        </div>
+
+        <div class="container">
+            <h2>About the Project</h2>
+            <p>This project utilizes several machine learning algorithms such as Support Vector Machines (SVM), Logistic Regression, Naive Bayes, and VADER to analyze the sentiment of customer reviews. The project was developed to facilitate easy sentiment analysis for users, whether they are individuals or businesses.</p>
+            <ul>
+                <li><strong>Data Collection:</strong> Customer reviews were collected from various sources to build a diverse dataset.</li>
+                <li><strong>Preprocessing:</strong> Data was cleaned and prepared for analysis using natural language processing techniques.</li>
+                <li><strong>Model Training:</strong> Multiple machine learning models were trained to classify sentiments accurately.</li>
+                <strong>Deployment:</strong> The project was deployed online to allow users to upload reviews and receive sentiment analysis in real-time.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Senti

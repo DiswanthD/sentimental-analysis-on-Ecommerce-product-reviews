@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Project</title>
+    <style>
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #a6c0fe, #f68084);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        
+        header {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 20px 0 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        /* Header Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .container h2 {
+            color: #007bff;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Buttons */
+        .button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background: #0056b3;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .container h2 {
+                font-size: 1.5rem;
+            }
+
+            .container p {
+                font-size: 1rem;
+            }
+
+            .button {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sentiment Analysis Project</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('upload') }}">Start Analysis</a></li>
+                <li><a href="{{ url_for('teamdetails') }}">Team Details</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Welcome</h2>
+            <p>Discover the potential of sentiment analysis to understand customer feedback and make smarter business decisions.</p>
+            <a href="{{ url_for('upload') }}" class="button">Start Analysis</a>
+        </div>
+
+        <div class="container">
+            <h2>How It Works</h2>
+            <p>Our tool processes customer reviews using advanced machine learning algorithms. Analyze the sentiment to determine whether feedback is positive, negative, or neutral.</p>
+        </div>
+
+        <div class="container">
+            <h2>About the Project</h2>
+            <p>This project leverages cutting-edge techniques, including Support Vector Machines, Logistic Regression, and VADER, to provide meaningful insights from customer reviews.</p>
+        </div>
+
+        <div class="container">
+            <h2>Technologies Used</h2>
+            <p>The project is built using Python for back-end processing and Flask for creating a seamless web interface. We integrate advanced libraries such as scikit-learn, pandas, and VADER to achieve high accuracy in sentiment prediction.</p>
+        </div>
+
+        <div class="container">
+            <h2>Key Features</h2>
+            <ul style="text-align: left; padding-left: 20px;">
+                <li>Analyze sentiments of product reviews in real time.</li>
+                <li>Interactive and user-friendly web interface.</li>
+                <li>Detailed report generation for business insights.</li>
+                <li>Support for multiple data formats (CSV files only).</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h2>Challenges and Future Scope</h2>
+            <p>The project faced challenges in handling ambiguous or sarcastic reviews, which can mislead sentiment prediction.</p>
+        </div>
+
+        <div class="container">
+            <h2>Applications</h2>
+            <p>Sentiment analysis can be applied across various industries, including:</p>
+            <ul style="text-align: left; padding-left: 20px;">
+                <li>Customer feedback analysis for e-commerce platforms.</li>
+                <li>Social media sentiment monitoring for brand reputation.</li>
+                <li>Predictive analytics for market trends.</li>
+                <li>Improving customer support and engagement strategies.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2025 Sentiment Analysis Project | All Rights Reserved</p>
+        <p>Contact us at <a href="vvitsentimentanalysis@gmail.com">vvitsentimentanalysis@gmail.com </a></p>
+    </footer>
+</body>
+</html>
